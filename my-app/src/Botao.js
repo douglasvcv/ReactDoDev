@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+// import UserLog from './userLog'
 
-const Botao = ()=>{
-    const [some, setSoma] = useState(0)
-    const [frase, setFrase] = useState('Meu nome é ')
+const Botao = (props)=>{
+    console.log("props:" , props)
+    // const [some, setSoma] = useState(0)
+    // const [frase, setFrase] = useState('Meu nome é ')
     
     
-    const handleFrase = ()=>{
-        setFrase(frase +'Douglas')
-        console.log(frase)
-    }
-    const handle = () => {
-        setSoma(some+1)
-        console.log(some)
-    }
-    useEffect(()=>{console.log("useEffect executado")}, [frase])
-    useEffect(()=>{console.log("useEffect na soma")}, [some])
+    // const handleFrase = ()=>{
+    //     setFrase(frase +'Douglas')
+    //     console.log(frase)
+    // }
+    // const handle = () => {
+    //     setSoma(some+1)
+    //     console.log(some)
+    // }
+   
     return(
         <>
-    <button onClick={handleFrase}>Muda frase</button>
-    <button onClick={handle}>Some aqui</button>
+    <button onClick={()=>{props.onAcaoClick(props.msg)}}>{props.children}</button>
+    {/* <button onClick={handle}>Some aqui</button> */}
         </>
     )
 }
