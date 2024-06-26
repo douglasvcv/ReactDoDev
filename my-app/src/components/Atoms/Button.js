@@ -18,7 +18,7 @@ const Botao = (props)=>{
    
     return(
         <>
-    <button onClick={()=>{props.onAcaoClick(props.msg)}}>{props.children}</button>
+    <button onClick={()=>{props.funcaoClick(props.msg)}}>{props.children}</button>
     {/* <button onClick={handle}>Some aqui</button> */}
         </>
     )
